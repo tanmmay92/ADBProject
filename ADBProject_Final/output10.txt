@@ -1,0 +1,17 @@
+begin(T1)
+begin(T2)
+begin(T3)
+W(T3,x2,22)
+W(T2,x4,44)
+R(T3,x4)
+T3(R,x4) has to wait
+end(T2)
+End RW-Transaction T2
+The value that is read is 44
+end(T3)
+End RW-Transaction T3
+R(T1,x2)
+The value that is read is 22
+end(T1)
+End RW-Transaction T1
+0

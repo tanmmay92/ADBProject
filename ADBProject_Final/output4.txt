@@ -1,0 +1,21 @@
+begin(T1)
+begin(T2)
+R(T1,x1)
+The value that is read is 10
+fail(2)
+Site2 Down = true
+Truncating lock table of site2
+Locktable Size = 1
+Locktable Size after clearing =  0
+W(T2,x8,88)
+R(T2,x3)
+The value that is read is 30
+R(T1, x5)
+The value that is read is 50
+end(T2)
+End RW-Transaction T2
+recover(2)
+Site 2 Down = false
+end(T1)
+Transaction T1 is aborted
+0
